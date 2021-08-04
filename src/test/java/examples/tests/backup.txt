@@ -1,0 +1,41 @@
+Feature: Sample Banking Application Tests
+
+Background:
+	#Given def locators = read('data.json')
+	* call read 'data.json'
+	* configure driver = { type: 'chrome' }
+	#* configure driver = { type: 'geckodriver' }
+	#* configure driver = { type: 'msedge' }
+	#Given driver 'https://parabank.parasoft.com/'
+	* driver baseURL
+	#* def username = input_username
+Scenario: Create account and transfer funds
+	* maximize()
+    And delay(3000)
+	And input(locators.input_username,'Sunny')
+	#And input({ '#(input_username)' },'Sunny')
+	#And input("+locators[1].value+",'Sunny')
+	And input("//input[@type='password']",'Rainbow123')
+	And delay(3000)
+	Then click("//input[@type='submit']")
+	* waitUntil("document.readyState == 'complete'")
+	* match text("//*[@id='rightPanel']/div/div/h1") == 'Accounts Overview'
+	And click("//a[contains(text(), 'Open New Account')]") 
+	And select("//select[@class='input ng-pristine ng-untouched ng-valid ng-not-empty']", 2)
+	And delay(3000)
+	And select("select[id=fromAccountId]", 2)
+	And delay(2000)
+	Then click("//input[@type='submit']")
+	And delay(2000)
+	* match text("//*[@id='rightPanel']/div/div/h1") == 'Account Opened!'
+	* click("//a[contains(text(), 'Transfer Funds')]")
+	* match text("//*[@id='rightPanel']/div/div/h1") == 'Transfer Funds'
+	And input("//*[@id='amount']",'100')
+	And delay(2000)
+	And select("select[id=toAccountId]", 3)
+	And delay(2000)
+	And select("select[id=fromAccountId]", 2)
+	And delay(2000)
+	Then click("//*[@id='rightPanel']/div/div/form/div[2]/input")
+	And delay(2000)
+	* match text("//*[@id='rightPanel']/div/div/h1") == 'Transfer Complete!'

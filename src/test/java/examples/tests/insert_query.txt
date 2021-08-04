@@ -1,0 +1,1 @@
+INSERT INTO Dummy (Name,Age) VALUES ('Binod', '24')

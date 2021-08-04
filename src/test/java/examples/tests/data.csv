@@ -1,0 +1,18 @@
+key,value
+input_username,//input[@type='text']
+input_password,//input[@type='password']
+button_login,//input[@type='submit']
+text_welcome,"//*[@id=""rightPanel""]/div/div/h1"
+link_newaccount,"//a[contains(text(), 'Open New Account')]"
+drop_accounttype,//select[@class='input ng-pristine ng-untouched ng-valid ng-not-empty']
+drop_accountnumber,select[id=fromAccountId]
+button_openaccount,//input[@type='submit']
+text_newaccount,"//*[@id=""rightPanel""]/div/div/h1"
+text_accountnumber,"//*[@id=""newAccountId""]"
+link_transferfunds,"//a[contains(text(), 'Transfer Funds')]"
+text_transferfunds,"//*[@id=""rightPanel""]/div/div/h1"
+input_amount,"//*[@id=""amount""]"
+drop_fromaccount,select[id=toAccountId]
+drop_toaccount,select[id=fromAccountId]
+button_transfer,"//*[@id=""rightPanel""]/div/div/form/div[2]/input"
+text_transfercomplete,"//*[@id=""rightPanel""]/div/div/h1"
