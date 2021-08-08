@@ -7,7 +7,7 @@
   "button_login": "//input[@type='submit']",
   "text_welcome": "//*[@id='rightPanel']/div/div/h1",
   "link_newaccount": "//a[contains(text(), 'Open New Account')]",
-  "drop_accounttype": "//select[@class='input ng-pristine ng-untouched ng-valid ng-not-empty']",
+  "drop_accounttype": "//select[@id='type']",
   "drop_accountnumber": "select[id=fromAccountId]",
   "button_openaccount": "//input[@type='submit']",
   "text_newaccount": "//*[@id='rightPanel']/div/div/h1",

@@ -8,7 +8,7 @@ import scala.language.postfixOps
 class TestUserSimulation extends Simulation {
 
   {
-    val getUser = scenario("getCall").exec(karateFeature("classpath:examples/tests/users.feature"))
+    val getUser = scenario("getCall").exec(karateFeature("classpath:examples/tests/CURD.feature"))
 
     setUp(
       getUser.inject(rampUsers(10) during (5 seconds)))

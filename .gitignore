@@ -37,3 +37,5 @@ karate-junit4/src/test/java/com/intuit/karate/junit4/dev
 karate-robot/src/test/java/robot/dev
 
 
+karate-robot.jar
+karate.jar
