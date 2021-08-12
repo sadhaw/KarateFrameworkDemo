@@ -9,8 +9,8 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
     <dependencies>
         <dependency>
@@ -55,7 +55,8 @@
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
-            <version>9.2.1.jre15</version>
+            <version>8.4.1.jre8</version>
+            <!-- <version>9.2.1.jre15</version> -->
         </dependency>
         <dependency>
             <groupId>com.intuit.karate</groupId>
