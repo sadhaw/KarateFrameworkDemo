@@ -31,6 +31,15 @@ pipeline {
             steps {
                 script {
                     sh "mvn gatling:test -Denv=${params.Environment} -DrampUpUsers=${params.RAMP_USERS} -DrampUpDuration=${params.RAMP_DURATION}"
+
+        publishHTML target: [
+            allowMissing: false,
+            alwaysLinkToLastBuild: false,
+            keepAll: true,
+            reportDir: 'target/gatling',
+            reportFiles: 'index.html',
+            reportName: 'Html Report'
+          ]
                 }
             }
         }
