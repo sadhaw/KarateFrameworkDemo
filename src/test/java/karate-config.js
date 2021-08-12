@@ -5,7 +5,7 @@ function fn() {
      baseURL : "https://parabank.parasoft.com/",
     //input_username : "//input[@type='text']"
     usr : "Sunny",
-    pwd : "Rainbow123",
+    pwd : "Sunny",
     txtWelcome : "Accounts Overview",
     drpAcntType : 2,
     drpAcntNmbr : 2,
@@ -16,7 +16,6 @@ function fn() {
     drpToAcnt : 2,
     txtTrnfrCmplt : "Transfer Complete!",
     } 
-  
     var env = karate.env
     karate.log('Env is : ',env )
   
