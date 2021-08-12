@@ -3,15 +3,10 @@ pipeline {
     agent { label "master" }
 
     tools {
-        maven 'Maven-LATEST'
+        maven 'Maven'
     }
 
     parameters {
-        choice(
-                choices: ['dev', 'preprod'],
-                description: 'Choose an environment please',
-                name: 'Environment'
-        )
         string(
                 name: 'RAMP_USERS',
                 description: 'Number of users to inject',
