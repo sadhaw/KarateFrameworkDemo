@@ -31,8 +31,8 @@ function fn() {
         karate.configure('driver', { type: 'chrome' })
     }
   
-    karate.configure('connectTimeout', 5000);
-    karate.configure('readTimeout', 5000);
+    karate.configure('connectTimeout', 20000);
+    karate.configure('readTimeout', 20000);
   
     return config;
    }
