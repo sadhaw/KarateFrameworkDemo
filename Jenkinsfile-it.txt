@@ -1,0 +1,43 @@
+pipeline {
+
+    agent { label "master" }
+
+    tools {
+        maven 'Maven'
+    }
+
+    parameters {
+        choice(
+                choices: ['chrome', 'firefox','edge'],
+                description: 'Please choose a browser',
+                name: 'Browser'
+        )
+    }
+
+    stages {
+
+        stage('Maven build') {
+            steps {
+                sh "mvn clean"
+            }
+        }
+
+        stage('test') {
+            steps {
+                script {
+                    sh "mvn test -Denv=${params.Environment}"
+                }
+            }
+        }
+
+        stage('generate reports') {
+            steps {
+                cucumber buildStatus: "UNSTABLE",
+                fileIncludePattern: "**/*.json",
+                jsonReportDirectory: "target"
+            }
+        }
+
+    }
+
+}
