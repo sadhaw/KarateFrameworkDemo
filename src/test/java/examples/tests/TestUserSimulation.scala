@@ -18,7 +18,7 @@ class TestUserSimulation extends Simulation {
     setUp(
       // getUser.inject(rampUsers(10) during (5 seconds)))
       getUser.inject(rampUsers(rampUsersCount) during rampDuration)
-  
+    )
 
     after {
     println("Tasklist Management Load Tests finished!!")
